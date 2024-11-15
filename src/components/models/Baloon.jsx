@@ -1,0 +1,374 @@
+"use client"
+import React, { useRef } from 'react'
+import { useGLTF } from '@react-three/drei'
+import { useFrame } from '@react-three/fiber';
+
+export default function Baloon(props) {
+  const { nodes, materials } = useGLTF('/models/Loon.glb');
+
+  const modelRef = useRef()
+  
+  useFrame((state, delta, xrFrame) => {
+    modelRef.current.position.y = -1.0 + Math.sin(state.clock.elapsedTime)*0.15;
+  })
+
+  return (
+    <group {...props} dispose={null}
+    ref={modelRef}
+    position={[0.2,-1.0,0]}      // Position ng baloon
+    scale={[0.40,0.40,0.40]}   // sukat lapad,haba,kapal
+    rotation={[0,0,0]}         // rotation 
+    >
+
+      <group scale={0.01}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.circlerope2_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.circlerope1_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.circlerope4_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.circlerope3_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.ballonnode5_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.ballonnode2_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.ballonnode3_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.ballonnode1_low_other_0.geometry}
+          material={materials.other}
+          position={[0, 600.144, 0]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.ballonnode_low_other_0.geometry}
+          material={materials.other}
+          position={[0, 600.144, 0]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.torus1_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.torus_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.basketnode3_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.basketnode_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.transitionnode_low_other_0.geometry}
+          material={materials.other}
+          position={[37.491, 217.183, 47.164]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.transitionnode1_low_other_0.geometry}
+          material={materials.other}
+          position={[37.392, 217.871, 45.413]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.transitionnode5_low_other_0.geometry}
+          material={materials.other}
+          position={[61.548, 218.204, -8.356]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.transitionnode3_low_other_0.geometry}
+          material={materials.other}
+          position={[-59.116, 218.634, 7.925]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.transitionnode2_low_other_0.geometry}
+          material={materials.other}
+          position={[-39.658, 219.559, 46.039]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.circlerope_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.transitionnode4_low_other_0.geometry}
+          material={materials.other}
+          position={[0.52, 219.151, -58.957]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.shieldnode3_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.shieldnode2_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.shieldnode_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.shieldnode1_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.holderrope_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.shieldrope1_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.shieldrope_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.sphere_low_sphere_0.geometry}
+          material={materials.sphere}
+          position={[0.065, 407.888, 0.02]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.hemisphere_low_other_0.geometry}
+          material={materials.other}
+          position={[0, -42.262, 0]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.basket_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.transition2_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.transition1_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.holder2_low_other_0.geometry}
+          material={materials.other}
+          position={[0, 31.063, 0]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.thorn2_low_other_0.geometry}
+          material={materials.other}
+          position={[0, 31.063, 0]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.holder1_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.thorn1_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.basketrope_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.ballonrope_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.burner_low_other_0.geometry}
+          material={materials.other}
+          position={[0, 178.793, 0]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.transition_low_other_0.geometry}
+          material={materials.other}
+          position={[0, 219.398, 0]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.burnernode_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.burnernode1_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.burnernode2_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.node_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.node1_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.node2_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.basketnode2_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.basketnode1_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.bagrope_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.bagknot_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.bag_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.shield_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.ballonnode4_low_other_0.geometry}
+          material={materials.other}
+          position={[0.065, 407.888, 0.02]}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.holder_low_other_0.geometry}
+          material={materials.other}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.thorn_low_other_0.geometry}
+          material={materials.other}
+        />
+      </group>
+    </group>
+  )
+}
+
+useGLTF.preload('/models/Loon.glb')
